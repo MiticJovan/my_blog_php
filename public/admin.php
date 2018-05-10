@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Get values</title>
+	<title>Admin</title>
 	<link rel="stylesheet" media="all" type="text/css" href="css/public.css">
 	<link href="https://fonts.googleapis.com/css?family=Gothic+A1:400,700" rel="stylesheet">
 </head>

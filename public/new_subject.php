@@ -8,15 +8,7 @@
 			<?php echo navigation($current_subject, $current_page); ?>
 		</div>
 		<div id="page">
-			<?php if ($current_subject) { ?>
-			<h2>Manage Subject</h2>
-			Menu name: <?php echo $current_subject["manu_name"]; ?><br />
-			<?php } elseif ($current_page) { ?>
-			<h2>Manage Page</h2>
-			Menu name: <?php echo $current_page["manu_name"]; ?><br />
-			<?php } else { ?>
-				Please select subject or a page.
-			<?php } ?> 
+			
 		</div>
 	</div>
 
