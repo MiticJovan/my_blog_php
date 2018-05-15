@@ -1,6 +1,9 @@
+	<?php require_once("../includes/session.php"); ?> 
 	<?php require_once("../includes/db_connection.php"); ?>
 	<?php require_once("../includes/functions.php"); ?> 
 	<?php include("../includes/layouts/header.php"); ?> 
+	<?php require_once("../includes/validation_functions.php"); ?>
+	
 	<?php find_selected_page(); ?> 
 
 	<div id="main">
@@ -8,6 +11,9 @@
 			<?php echo navigation($current_subject, $current_page); ?>
 		</div>
 		<div id="page">
+			<?php echo message(); ?> 
+			<?php $errors = errors(); ?> 
+			<?php echo form_errors($errors); ?>
 			<h2>Create news</h2>
 			<form action="create_subject.php" method="post">
 			<p>Post name:

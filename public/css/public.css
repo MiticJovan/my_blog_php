@@ -111,5 +111,12 @@ font-size: 22px;
 #page ul {
 	padding: 0;
 }
+div.message {
+	border: 2px solid #D4E6F4;
+	color: #D4E6F4;
+	font-weight: bold;
+	margin: 1em 0;
+	padding: 1em;
+}
 
 

@@ -1,5 +1,6 @@
 	<?php require_once("../includes/db_connection.php"); ?>
 	<?php require_once("../includes/functions.php"); ?> 
+	<?php require_once("../includes/session.php"); ?>
 	<?php include("../includes/layouts/header.php"); ?> 
 	<?php find_selected_page(); ?> 
 
@@ -10,6 +11,7 @@
 			<a href="new_subject.php">+ Add a subject</a>
 		</div>
 		<div id="page">
+			<?php echo message();?> 
 			<?php if ($current_subject) { ?>
 			<h2>Manage Subject</h2>
 			Menu name: <?php echo $current_subject["manu_name"]; ?><br />
