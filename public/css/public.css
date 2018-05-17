@@ -10,6 +10,12 @@ body {
 }
 img {border: none;}
 a { color: #000; }
+.button {
+	border-radius: 4px;
+}
+textarea {
+	width: 300px;
+}
 
 
 
@@ -82,6 +88,7 @@ ul.pages {
 #page {
 	vertical-align: top;
 	padding-top: 220px;
+	margin-left: 220px;
 
 }
 #page h2 {

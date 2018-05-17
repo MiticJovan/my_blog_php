@@ -74,7 +74,7 @@ if (!$current_subject) {
 			}
 			 ?> 
 			<?php echo form_errors($errors); ?>
-			<h2>Edit news : <?php echo $current_subject["manu_name"]; ?></h2>
+			<h2>Edit Post : <?php echo $current_subject["manu_name"]; ?></h2>
 			<form action="edit_subject.php?subject=<?php echo $current_subject["id"]; ?>" method="post">
 			<p>Post name:
 				<input type="text" name="manu_name" value="<?php echo $current_subject["manu_name"]; ?>">
@@ -101,8 +101,8 @@ if (!$current_subject) {
 			<input type="submit" name="submit" value="Edit Subject">
 			</form>
 			<br>
-			<button><a href="manage_content.php">Cancel</a></button>&nbsp;&nbsp;
-			<button><a href="delete_subject.php?subject=<?php echo $current_subject["id"] ?>" onclick= "return confirm('Are you sure?');">Delete</a></button>
+			<button class="button"><a href="manage_content.php">Cancel</a></button>&nbsp;&nbsp;
+			<button class="button"><a href="delete_subject.php?subject=<?php echo $current_subject["id"] ?>" onclick= "return confirm('Are you sure?');">Delete</a></button>
 		</div>
 	</div>
 

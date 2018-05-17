@@ -17,11 +17,11 @@ $result = mysqli_query($connection, $query);
 
  	if ($result && mysqli_affected_rows($connection) == 1) {
  		//Success
- 		$_SESSION["message"] = " Subject deleted. ";
+ 		$_SESSION["message"] = " Post deleted. ";
  		redirect_to("manage_content.php");
  	} else {
  		//Failure
- 		$_SESSION["message"] = " Subject deletion failed. ";
+ 		$_SESSION["message"] = " Post deletion failed. ";
  		redirect_to("manage_content.php?subject={$id}");
 
  	}

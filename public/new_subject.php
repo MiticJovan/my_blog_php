@@ -3,7 +3,7 @@
 	<?php require_once("../includes/functions.php"); ?> 
 	<?php include("../includes/layouts/header.php"); ?> 
 	<?php require_once("../includes/validation_functions.php"); ?>
-	
+
 	<?php find_selected_page(); ?> 
 
 	<div id="main">
@@ -37,7 +37,7 @@
 			<input type="submit" name="submit" value="Create Subject">
 			</form>
 			<br>
-			<a href="manage_content.php">Cancel</a>
+			<button class="button"><a href="manage_content.php">Cancel</a></button>
 		</div>
 	</div>
 

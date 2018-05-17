@@ -13,15 +13,15 @@
 		<div id="page">
 			<?php echo message();?> 
 			<?php if ($current_subject) { ?>
-			<h2>Manage Subject</h2>
-			Menu name: <?php echo $current_subject["manu_name"]; ?><br /><br>
+			<h2>Manage Post</h2>
+			Post name: <?php echo $current_subject["manu_name"]; ?><br /><br>
 			<button><a href="edit_subject.php?subject=<?php echo $current_subject["id"]; ?>">Edit Subject</a></button>
 
 			<?php } elseif ($current_page) { ?>
 			<h2>Manage Page</h2>
-			<p>Menu name: <?php echo $current_page["manu_name"]; ?></p><br />
+			<p>Post name: <?php echo $current_page["manu_name"]; ?></p><br />
 			<?php } else { ?>
-				<p>Please select subject or a page.</p>
+				<p>Please select post or a page.</p>
 			<?php } ?> 
 		</div>
 	</div>
