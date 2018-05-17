@@ -16,12 +16,12 @@
 			<h2>Manage Subject</h2>
 			Menu name: <?php echo $current_subject["manu_name"]; ?><br />
 			<a href="edit_subject.php?subject=<?php echo $current_subject["id"]; ?>">Edit Subject</a>
-			
+
 			<?php } elseif ($current_page) { ?>
 			<h2>Manage Page</h2>
-			Menu name: <?php echo $current_page["manu_name"]; ?><br />
+			<p>Menu name: <?php echo $current_page["manu_name"]; ?></p><br />
 			<?php } else { ?>
-				Please select subject or a page.
+				<p>Please select subject or a page.</p>
 			<?php } ?> 
 		</div>
 	</div>

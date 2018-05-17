@@ -3,11 +3,56 @@
 	<?php require_once("../includes/functions.php"); ?> 
 	<?php require_once("../includes/validation_functions.php"); ?> 
 
+
 	<?php find_selected_page(); ?>
+
+<?php 
+ if (isset($_POST['submit'])) {
+
+
+ //validations
+ $required_fields = array("manu_name", "position", "visible");
+ validate_presences($required_fields);
+
+ $fields_with_max_lengths = array("manu_name" => 30);
+ validate_max_lengths($fields_with_max_lengths);
+
+ if (empty($errors)) {
+ 	//perform update
+
+ 	$id = $current_subject["id"];
+ 	$manu_name = mysql_prep($_POST["manu_name"]);
+ 	$position = (int) $_POST["position"];
+ 	$visible = (int) $_POST["visible"];
+
+ 	$query = "UPDATE subjects SET ";
+ 	$query .= "manu_name = '{$manu_name}', ";
+ 	$query .= "position = {$position}, ";
+ 	$query .= "visible = {$visible} ";
+ 	$query .= "WHERE id = {$id} ";
+ 	$query .= "LIMIT 1";
+ 	$result = mysqli_query($connection, $query);
+
+ 	if ($result && mysqli_affected_rows($connection) == 1) {
+ 	//Success
+ 		$_SESSION["message"] = " Subject updated. ";
+ 		redirect_to("manage_content.php");
+ 	} else {
+ 		//Failure
+ 		$message = " Subject update failed. ";
+ 		redirect_to("new_subject.php");
+ 	}
+ }
+ }else {
+ 	//This is probably a Get request
+ 	
+ } //end: if (isset($_POST['submit']))
+ ?>
 
 	<?php if (!$current_subject) {
 		redirect_to("manage_content.php"); 
 	} ?> 
+
 
 	<?php include("../includes/layouts/header.php"); ?> 
 	
@@ -18,11 +63,14 @@
 			<?php echo navigation($current_subject, $current_page); ?>
 		</div>
 		<div id="page">
-			<?php echo message(); ?> 
-			<?php $errors = errors(); ?> 
+			<?php //message is just a variable, doesn't use the SESSION
+			if (!empty($message)) {
+				echo "<div class=\"message\">" . $message . "</div>";
+			}
+			 ?> 
 			<?php echo form_errors($errors); ?>
 			<h2>Edit news : <?php echo $current_subject["manu_name"]; ?></h2>
-			<form action="create_subject.php" method="post">
+			<form action="edit_subject.php?subject=<?php echo $current_subject["id"]; ?>" method="post">
 			<p>Post name:
 				<input type="text" name="manu_name" value="<?php echo $current_subject["manu_name"]; ?>">
 			</p> 

@@ -48,17 +48,18 @@ a:hover {color: #d1d2d3;}
 	float: left;
 	width: 150px;
 	height: 60%;
-	margin-top: 10px;
+	margin-top: 100px;
 	margin-left: 12px;
 	padding: 0 2em;
 	color: #D4E6F4;
 	background: linear-gradient(#83abfc, #134bf2);
 	border-radius: 12px 60px;
 	opacity: 0.7;
+	margin-right: 25px;
 }
 #navigation a {
-	color: #D4E6F4;
 	text-decoration: none;
+}
 }
 #navigation a:hover {
 	color: #FFF;
@@ -79,9 +80,9 @@ ul.pages {
 }
 /* Page Content*/
 #page {
-	float:left;
-	padding-left: 15px;
 	vertical-align: top;
+	padding-top: 200px;
+
 }
 #page h2 {
 color: #8D0D19;
@@ -112,11 +113,10 @@ font-size: 22px;
 	padding: 0;
 }
 div.message {
-	border: 2px solid #D4E6F4;
-	color: #D4E6F4;
+	border: 2px solid #8D0D19;
+	color: #8D0D19;
 	font-weight: bold;
-	margin: 1em 0;
-	padding: 1em;
+	display: inline;
 }
 
 
