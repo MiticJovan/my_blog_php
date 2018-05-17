@@ -4,13 +4,13 @@ body {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 13px; 
+	font-size: 12px; 
 	line-height: 15px;
 	background: #5892ef;
 }
 img {border: none;}
 a { color: #000; }
-a:hover {color: #d1d2d3;}
+
 
 
 #header {
@@ -81,7 +81,7 @@ ul.pages {
 /* Page Content*/
 #page {
 	vertical-align: top;
-	padding-top: 200px;
+	padding-top: 220px;
 
 }
 #page h2 {
@@ -94,7 +94,7 @@ font-size: 22px;
 	font-size: 19px;
 }
 #page p, a {
-	font-size: 14px;
+	font-size: 16px;
 	text-decoration: none;
 }
 #page p{
@@ -113,7 +113,7 @@ font-size: 22px;
 	padding: 0;
 }
 div.message {
-	border: 2px solid #8D0D19;
+	border: 1px solid #8D0D19;
 	color: #8D0D19;
 	font-weight: bold;
 	display: inline;

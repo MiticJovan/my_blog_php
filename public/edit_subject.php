@@ -5,7 +5,12 @@
 
 
 	<?php find_selected_page(); ?>
-
+<?php 
+if (!$current_subject) {
+	//subject ID was missing or invalid or subject couldn't be found in the database
+	redirect_to("manage_content.php");
+}
+?> 
 <?php 
  if (isset($_POST['submit'])) {
 
@@ -40,7 +45,7 @@
  	} else {
  		//Failure
  		$message = " Subject update failed. ";
- 		redirect_to("new_subject.php");
+ 		redirect_to("manage_subject.php");
  	}
  }
  }else {
@@ -96,7 +101,8 @@
 			<input type="submit" name="submit" value="Edit Subject">
 			</form>
 			<br>
-			<a href="manage_content.php">Cancel</a>
+			<button><a href="manage_content.php">Cancel</a></button>&nbsp;&nbsp;
+			<button><a href="delete_subject.php?subject=<?php echo $current_subject["id"] ?>" onclick= "return confirm('Are you sure?');">Delete</a></button>
 		</div>
 	</div>
 
