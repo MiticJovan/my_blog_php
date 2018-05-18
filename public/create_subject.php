@@ -31,11 +31,11 @@ $result = mysqli_query($connection, $query);
 
  if ($result) {
  	//Success
- 	$_SESSION["message"] = "Subject created.";
+ 	$_SESSION["message"] = "Post created.";
  	redirect_to("manage_content.php");
  	} else {
  		//Failure
- 		$_SESSION ["message"] = "Subject creation failed.";
+ 		$_SESSION ["message"] = "Post creation failed.";
  		redirect_to("new_subject.php");
  	}
  }else {

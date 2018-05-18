@@ -1,4 +1,4 @@
-<div id="footer"> Copyright &copy; 2018,&nbsp; OMS Zone &nbsp; author: Mitic Jovan</div>
+<div id="footer"> Copyright &copy; &nbsp; <?php echo date("Y M") ?> &nbsp; by OMS Zone &nbsp; author: Mitic Jovan</div>
 </body>
 </html>
 <?php 

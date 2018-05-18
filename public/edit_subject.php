@@ -38,13 +38,13 @@ if (!$current_subject) {
  	$query .= "LIMIT 1";
  	$result = mysqli_query($connection, $query);
 
- 	if ($result && mysqli_affected_rows($connection) == 1) {
+ 	if ($result && mysqli_affected_rows($connection) >= 0) {
  	//Success
- 		$_SESSION["message"] = " Subject updated. ";
+ 		$_SESSION["message"] = " Post updated. ";
  		redirect_to("manage_content.php");
  	} else {
  		//Failure
- 		$message = " Subject update failed. ";
+ 		$message = " Post update failed. ";
  		redirect_to("manage_subject.php");
  	}
  }
@@ -70,14 +70,14 @@ if (!$current_subject) {
 		<div id="page">
 			<?php //message is just a variable, doesn't use the SESSION
 			if (!empty($message)) {
-				echo "<div class=\"message\">" . $message . "</div>";
+				echo "<div class=\"message\">" . htmlentities($message) . "</div>";
 			}
 			 ?> 
 			<?php echo form_errors($errors); ?>
-			<h2>Edit Post : <?php echo $current_subject["manu_name"]; ?></h2>
-			<form action="edit_subject.php?subject=<?php echo $current_subject["id"]; ?>" method="post">
+			<h2>Edit Post : <?php echo htmlentities($current_subject["manu_name"]);?></h2>
+			<form action="edit_subject.php?subject=<?php echo urlencode($current_subject["id"]); ?>" method="post">
 			<p>Post name:
-				<input type="text" name="manu_name" value="<?php echo $current_subject["manu_name"]; ?>">
+				<input type="text" name="manu_name" value="<?php echo htmlentities($current_subject["manu_name"]);?>">
 			</p> 
 			<p>Position:
 			<select name="position">
@@ -102,7 +102,7 @@ if (!$current_subject) {
 			</form>
 			<br>
 			<button class="button"><a href="manage_content.php">Cancel</a></button>&nbsp;&nbsp;
-			<button class="button"><a href="delete_subject.php?subject=<?php echo $current_subject["id"] ?>" onclick= "return confirm('Are you sure?');">Delete</a></button>
+			<button class="button"><a href="delete_subject.php?subject=<?php echo urlencode($current_subject["id"]); ?>" onclick= "return confirm('Are you sure?');">Delete</a></button>
 		</div>
 	</div>
 

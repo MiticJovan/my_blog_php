@@ -34,8 +34,9 @@
 				<input type="radio" name="visible" value="0"> No &nbsp;
 				<input type="radio" name="visible" value="1"> Yes	
 			</p>
-			<input type="submit" name="submit" value="Create Subject">
+			<input class="button" type="submit" name="submit" value="Create Subject">
 			</form>
+			<br>
 			<br>
 			<button class="button"><a href="manage_content.php">Cancel</a></button>
 		</div>
