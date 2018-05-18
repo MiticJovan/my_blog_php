@@ -14,16 +14,25 @@
 			<?php echo message();?> 
 			<?php if ($current_subject) { ?>
 			<h2>Manage Post</h2>
-			Post name: <?php echo $current_subject["manu_name"]; ?><br /><br>
-			<button><a href="edit_subject.php?subject=<?php echo $current_subject["id"]; ?>">Edit Subject</a></button>
-
+			Post name: <?php echo  htmlentities($current_subject["manu_name"]); ?><br /><br>
+			<button><a href="edit_subject.php?subject=<?php echo $current_subject["id"]; ?>">Edit Subject</a></button><br><br>
+			Position: <?php echo $current_subject["position"]; ?> <br>
+			Visible: <?php echo $current_subject["visible"] == 1 ? 'yes' : 'no'; ?> <br><br>
 			<?php } elseif ($current_page) { ?>
 			<h2>Manage Page</h2>
-			<p>Post name: <?php echo $current_page["manu_name"]; ?></p><br />
+			<p>Post name: <?php echo htmlentities($current_page["manu_name"]); ?></p><br />
+			Position: <?php echo $current_page["position"] ?> <br>
+			Visible: <?php echo $current_page["visible"] == 1 ? 'yes' : 'no' ?> <br><br>
+			Content: <br>
+			<div class="view-content">
+				<?php echo  htmlentities($current_page["content"]) ?>
+			</div>
+
+
 			<?php } else { ?>
 				<p>Please select post or a page.</p>
 			<?php } ?> 
 		</div>
 	</div>
 
-			<?php include("../includes/layouts/footer.php") ?> 
+			<?php include("../includes/layouts/footer.php") ?>
