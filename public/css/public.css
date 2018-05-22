@@ -8,7 +8,10 @@ body {
 	line-height: 15px;
 	background: #5892ef;
 }
-img {border: none;}
+hr {
+	width: 25%;
+	float: left;
+}
 a { color: #000; }
 .button {
 	border-radius: 4px;
@@ -82,13 +85,14 @@ ul.pages {
 /* Page Content*/
 #page {
 	vertical-align: top;
-	padding-top: 220px;
+	padding-top: 260px;
 	margin-left: 220px;
 
 }
 #page h2 {
 	color: #8D0D19;
-	margin-top: 1em;
+	margin: 0 auto;
+	padding-bottom: 15px;
 	font-size: 22px;
 }
 #page h3 {
@@ -111,7 +115,7 @@ ul.pages {
 	margin: 5px;
 }
 #page ul {
-	padding: 0;
+	padding-left: 24px;
 }
 div.message {
 	border: 1px solid #8D0D19;

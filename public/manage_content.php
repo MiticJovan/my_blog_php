@@ -17,10 +17,27 @@
 			<?php if ($current_subject) { ?>
 			<h2>Manage Post</h2>
 			Post name: <?php echo  htmlentities($current_subject["manu_name"]); ?><br /><br>
-			<button><a href="edit_subject.php?subject=<?php echo  urlencode($current_subject["id"]); ?>">Edit Subject</a></button><br><br>
-			<button class="button"><a href="delete_subject.php?subject=<?php echo $current_subject["id"] ?>" onclick= "return confirm('Are you sure?');">Delete</a></button><br><br>
 			Position: <?php echo $current_subject["position"]; ?> <br>
 			Visible: <?php echo $current_subject["visible"] == 1 ? 'yes' : 'no'; ?> <br><br>
+			<button><a href="edit_subject.php?subject=<?php echo  urlencode($current_subject["id"]); ?>">Edit Subject</a></button><br><br>
+			<button><a href="delete_subject.php?subject=<?php echo $current_subject["id"] ?>" onclick= "return confirm('Are you sure?');">Delete</a></button><br><br>
+			<hr>
+			<h3>Post in this subject:</h3>
+			<ul>
+				<?php 
+				$subject_pages = find_pages_for_subject($current_subject["id"]);
+				while ($page = mysqli_fetch_assoc($subject_pages)) {
+				    echo "<li>";
+				    $safe_page_id = urlencode($page["id"]);
+				    echo "<a href=\"manage_content.php?page={$safe_page_id}\">";
+				    echo htmlentities($page["manu_name"]);
+				    echo "</a>";
+				    echo "</li>";
+				}
+				 ?> 
+			</ul>
+			<br>
+			+ <a href="new_page.php?subject=<?php echo urlencode($current_subject["id"]); ?>">Add a new Post to this subject</a>
 			<?php } elseif ($current_page) { ?>
 			<h2>Manage Page</h2>
 			<p>Post name: <?php echo htmlentities($current_page["manu_name"]); ?></p><br />
