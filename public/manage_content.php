@@ -41,9 +41,9 @@
 			<?php } elseif ($current_page) { ?>
 			<h2>Manage Page</h2>
 			<p>Post name: <?php echo htmlentities($current_page["manu_name"]); ?></p><br />
-			Position: <?php echo $current_page["position"] ?> <br>
-			Visible: <?php echo $current_page["visible"] == 1 ? 'yes' : 'no' ?> <br><br>
-			Content: <br><br>
+			<span>Position: <?php echo $current_page["position"] ?></span> <br>
+			<span>Visible: <?php echo $current_page["visible"] == 1 ? 'yes' : 'no' ?></span> <br>
+			<p>Content:</p> <br>
 			<div class="view-content">
 				<?php echo  htmlentities($current_page["content"]) ?>
 			</div>

@@ -12,7 +12,13 @@ hr {
 	width: 25%;
 	float: left;
 }
-a { color: #000; }
+span {
+	color: #534dd1;
+}
+p {
+	color: #534dd1;
+}
+a { color: #534dd1; }
 .button {
 	border-radius: 4px;
 }
@@ -22,8 +28,8 @@ a { color: #000; }
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background: linear-gradient(-90deg, #134bf2, #83abfc);
-	color: #1A446C;
+	background: linear-gradient(-90deg, #d1764d, #efa607);
+	color: #534dd1;
 	border-style: none;
 }
 #header h1 {
@@ -45,20 +51,21 @@ a { color: #000; }
 	margin: 0;
 	padding: 1em;
 	text-align: center;
-	background: linear-gradient(-90deg, #134bf2, #83abfc);
+	background: linear-gradient(-90deg, #d1764d, #efa607);
+	color: #534dd1;
 }
 /* Navigation*/
 #navigation {
 	float: left;
 	width: 150px;
-	height: 60%;
-	margin-top: 100px;
+	height: 70%;
+	margin-top: 130px;
 	margin-left: 12px;
 	padding: 0 2em;
-	color: #D4E6F4;
-	background: linear-gradient(#83abfc, #134bf2);
+	color: #534dd1;
+	background: linear-gradient(#d1764d, #efa607);
 	border-radius: 12px 60px;
-	opacity: 0.7;
+	opacity: 0.8;
 	margin-right: 25px;
 }
 #navigation a {
@@ -90,13 +97,13 @@ ul.pages {
 
 }
 #page h2 {
-	color: #8D0D19;
+	color: #534dd1;
 	margin: 0 auto;
 	padding-bottom: 15px;
 	font-size: 22px;
 }
 #page h3 {
-	color: #8D0D19;
+	color: #534dd1;
 	font-size: 19px;
 }
 #page p, a {
@@ -105,7 +112,7 @@ ul.pages {
 }
 #page p{
 	font-size: 19px;
-	color: #8D0D19;
+	color: #534dd1;
 	font-weight: bold;
 }
 #page a:hover {
@@ -118,23 +125,23 @@ ul.pages {
 	padding-left: 24px;
 }
 div.message {
-	border: 1px solid #8D0D19;
+	border: 1px solid #534dd1;
 	color: #8D0D19;
 	font-weight: bold;
 	display: inline;
 	padding: 0.5em;
 }
 .view-content {
-margin: 1em;
 padding: 0.5em;
-border: 1px solid #999;
+border: 1px solid #534dd1;
 display: inline;
+color: #534dd1;
 }
 /* errors */
  .error {
-	color: #8D0D19;
-	border: 2px solid #8D0D19;
-	padding: 1em;
+	color: #534dd1;
+	border: 1px solid #534dd1;
+	padding: 2px;
 	width: 15%;
 }
 .error ul {

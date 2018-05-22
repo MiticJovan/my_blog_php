@@ -14,7 +14,8 @@
 			<?php echo message(); ?> 
 			<?php $errors = errors(); ?> 
 			<?php echo form_errors($errors); ?>
-			<h2>Create news</h2>
+			<br>
+			<h2>Create Post</h2>
 			<form action="create_subject.php" method="post">
 			<p>Post name:
 				<input type="text" name="manu_name" value="">
@@ -34,7 +35,7 @@
 				<input type="radio" name="visible" value="0"> No &nbsp;
 				<input type="radio" name="visible" value="1"> Yes	
 			</p>
-			<input class="button" type="submit" name="submit" value="Create Subject">
+			<input class="button" type="submit" name="submit" value="Create Post">
 			</form>
 			<br>
 			<br>
