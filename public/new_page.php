@@ -32,23 +32,23 @@ if (!$current_subject) {
  	$content = mysql_prep($_POST["content"]);
 
  	$query = "INSERT INTO pages (";
- 	$query .= " subject_id, manu_name, position, visible, content";
+ 	$query .= "  subject_id, manu_name, position, visible, content ";
  	$query .= ") VALUES (";
- 	$query .= "{$subject_id}, '{$manu_name}', {position}, {$visible}, '{$content}'";
+ 	$query .= " {$subject_id}, '{$manu_name}', {$position}, {$visible}, '{$content}'";
  	$query .= ")";
  	$result = mysqli_query($connection, $query); 
 
  	if ($result) {
  	//Success
- 		$_SESSION["message"] = " Post created ";
+ 		$_SESSION["message"] = " Post Page created ";
  		redirect_to("manage_content.php?subject=" . urlencode($current_subject["id"]));
  	} else {
  		//Failure
- 		$_SESSION["message"] = " Post creation failed. ";
- 		redirect_to("manage_subject.php");
+ 		$_SESSION["message"] = " Post Page creation failed. ";
+ 		redirect_to("manage_content.php");
  	}
  }
- }else {
+ }else { 
  	//This is probably a Get request
  	
  } //end: if (isset($_POST['submit']))
@@ -60,11 +60,10 @@ if (!$current_subject) {
 		</div>
 		<div id="page">
 			<?php echo message(); ?> 
-			<?php $errors = errors(); ?> 
 			<?php echo form_errors($errors); ?>
 			<br>
 			<h2>Create Post</h2>
-			<form action="create_subject.php" method="post">
+			<form action="new_page.php?subject=<?php echo urlencode($current_subject["id"]); ?> " method="post">
 			<p>Post name:
 				<input type="text" name="manu_name" value="">
 			</p> 
@@ -73,7 +72,7 @@ if (!$current_subject) {
 				<?php 
 				$page_set = find_pages_for_subject($current_subject["id"]);
 				$page_count = mysqli_num_rows($page_set);				
-				for ($count = 1; $count <=  ($page_count + 1); $count++){
+				for ($count = 1; $count <= ($page_count + 1); $count++){
 					echo "<option value=\"{$count}\">{$count}</option>";  
 				}
 				 ?> 
@@ -86,7 +85,7 @@ if (!$current_subject) {
 			<p>Content:<br><br>
 			<textarea name="content" rows="10" cols="70"></textarea>
 			</p>
-			<input class="button" type="submit" name="submit" value="Create Post">
+			<input class="button" type="submit" name="submit" value="Create Page Post">
 			</form>
 			<br>
 			<button class="button"><a href="manage_content.php?subject=<?php echo urlencode($current_subject["id"]); ?>">Cancel</a></button>
