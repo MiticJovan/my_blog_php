@@ -1,3 +1,7 @@
+<?php require_once("../includes/functions.php"); ?>
+<?php $layout_context = "admin"; ?> 
+<?php include("../includes/layouts/header.php"); ?> 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +10,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Gothic+A1:400,700" rel="stylesheet">
 </head>
 <body>
-<div id="header">
-	<h1>Blog Page</h1>
-</div>
 <div id="main">
 	<div id="navigation">
 		&nbsp;

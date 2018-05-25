@@ -134,7 +134,7 @@ div.message {
 .view-content {
 padding: 0.5em;
 border: 1px solid #534dd1;
-display: inline;
+width: 440px;
 color: #534dd1;
 }
 /* errors */

@@ -58,7 +58,7 @@ if (!$current_subject) {
 		redirect_to("manage_content.php"); 
 	} ?> 
 
-
+	<?php $layout_context = "admin" ?>
 	<?php include("../includes/layouts/header.php"); ?> 
 	
  
@@ -82,7 +82,7 @@ if (!$current_subject) {
 			<p>Position:
 			<select name="position">
 				<?php 
-				$subject_set = find_all_subjects();
+				$subject_set = find_all_subjects(false);
 				$subject_count = mysqli_num_rows($subject_set);				
 				for ($count = 1; $count <=  $subject_count; $count++){
 					echo "<option value=\"{$count}\"";
