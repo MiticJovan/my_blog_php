@@ -60,7 +60,17 @@
 				confirm_query($page_set);
 				return $page_set;
 	}
-	function find_subject_by_id($subject_id) {
+	function find_all_admins() {
+		global $connection;
+
+		$query = "SELECT *";
+		$query .= "FROM admins ";
+		$query .= "ORDER BY username ASC";
+		$admin_set = mysqli_query($connection, $query);
+		confirm_query($admin_set);
+		return $admin_set;
+	}
+	 function find_subject_by_id($subject_id, $public=true) {
 
 				global $connection;
 
@@ -69,6 +79,9 @@
 				$query = "SELECT * ";
 				$query .= "FROM subjects " ;
 				$query .= "WHERE id = {$subject_id} ";
+				if ($public) {
+					$query .= "AND VISIBLE = 1 ";
+				}
 				$query .= "LIMIT 1";
 				$subject_set = mysqli_query($connection, $query);
 				confirm_query($subject_set);
@@ -78,7 +91,7 @@
 				 	return null;
 				 }
 	}
-	function find_page_by_id($page_id) {
+	function find_page_by_id($page_id, $public=true) {
 
 				global $connection;
 
@@ -87,6 +100,9 @@
 				$query = "SELECT * ";
 				$query .= "FROM pages " ;
 				$query .= "WHERE id = {$page_id} ";
+				if ($public) {
+					$query .="AND visible = 1 ";
+				}
 				$query .= "LIMIT 1";
 				$page_set = mysqli_query($connection, $query);
 				confirm_query($page_set);
@@ -96,16 +112,52 @@
 				 	return null;
 				 }
 	}
-	function find_selected_page() {
+	function find_admin_by_id($admin_id) {
+
+				global $connection;
+
+				$safe_admin_id = mysqli_real_escape_string($connection, $admin_id);
+
+				$query = "SELECT * ";
+				$query .= "FROM admins " ;
+				$query .= "WHERE id = {$safe_admin_id} ";
+				if ($admin) {
+					$query .= "AND VISIBLE = 1 ";
+				}
+				$query .= "LIMIT 1";
+				$admin_set = mysqli_query($connection, $query);
+				confirm_query($admin_set);
+				 if ($admin = mysqli_fetch_assoc($admin_set)) {
+				 	return $admin;
+				 } else {
+				 	return null;
+				 }
+	}
+	function find_default_page_for_subject($subject_id){
+		$page_set = find_pages_for_subject($subject_id);
+		 if ($first_page = mysqli_fetch_assoc($page_set)) {
+				 	return $first_page;
+				 } else {
+				 	return null;
+				 } 
+
+	}
+
+	function find_selected_page($public=false) {
 		global $current_subject;
 		global $current_page;
 		
 		if (isset($_GET["subject"])) {
-			$current_subject = find_subject_by_id($_GET["subject"]);
-			$current_page = null;
+			$current_subject = find_subject_by_id($_GET["subject"],$public);
+			if ($current_subject && $public) {
+				$current_page = find_default_page_for_subject($current_subject["id"]);
+			} else {
+				$current_page = null;
+			}
+			
 		} elseif (isset($_GET["page"])) {
 			$current_subject = null;
-			$current_page = find_page_by_id($_GET["page"]); 
+			$current_page = find_page_by_id($_GET["page"], $public); 
 		} else {
 			$current_subject = null;
 			$current_page = null;

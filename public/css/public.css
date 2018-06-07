@@ -46,9 +46,7 @@ a { color: #534dd1; }
 	background-size: cover;
 }
 #footer {
-	clear: both;
-	height: 2em;
-	margin: 0;
+	height: 40px;
 	padding: 1em;
 	text-align: center;
 	background: linear-gradient(-90deg, #d1764d, #efa607);
@@ -150,6 +148,13 @@ color: #534dd1;
 }
 .error ul li{
 	font size: 12px;
+}
+.view-content-public {
+padding: 0.5em;
+border: 1px solid #534dd1;
+width: 400px;
+color: #534dd1;
+font-size: 16px;
 }
 
 

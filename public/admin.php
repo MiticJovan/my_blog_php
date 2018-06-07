@@ -19,7 +19,7 @@
 		<p>Welcome to the admin area</p>
 		<ul>
 			<li><a href="manage_content.php">Manage Website Content</a></li>
-			<li><a href="mannage_admins.php">Manage Admin Users</a></li>
+			<li><a href="manage_admins.php">Manage Admin Users</a></li>
 			<li><a href="logout.php">Log Out</a></li>
 		</ul> 
 	</div>
