@@ -25,13 +25,13 @@ if (isset($_POST['submit'])) {
  		//Perform Update
  		$id = $admin["id"];
  		$username = mysql_prep($_POST["username"]);
- 		$hashed_password = mysql_prep($_POST["password"]);
+ 		$hashed_password = password_encrypt($_POST["password"]);
 
  		$query  = "UPDATE admins SET ";
- 		$query .= "username = '{$username}'";
+ 		$query .= "username = '{$username}', ";
  		$query .= "hashed_password = '{$hashed_password}' ";
- 		$query .= " WHERE id = {$id} ";
- 		$query .=	"LIMIT 1";
+ 		$query .= "WHERE id = {$id} ";
+ 		$query .= "LIMIT 1";
  		$result = mysqli_query($connection, $query);
  		if ($result && mysqli_affected_rows($connection) == 1) {
  			//Success

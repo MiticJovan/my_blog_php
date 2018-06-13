@@ -30,7 +30,9 @@
 	 		</table> 
 	 		<br>
 	 		<br>
-	 		<a href="new_admin.php"> + Add new admin</a>
+	 		<a href="new_admin.php"> + Add new admin</a><br>
+
 	 	</div>
 	 </div>
-	 <div id="footer">Copyright 2018, OMS Zone &nbsp; author Mitic Jovan</div>  
+
+	 <?php include("../includes/layouts/footer.php"); ?> 
