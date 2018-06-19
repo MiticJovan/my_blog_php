@@ -92,6 +92,7 @@ ul.pages {
 	vertical-align: top;
 	padding-top: 260px;
 	margin-left: 220px;
+	width: 450px;
 
 }
 #page h2 {
@@ -132,7 +133,7 @@ div.message {
 .view-content {
 padding: 0.5em;
 border: 1px solid #534dd1;
-width: 440px;
+width: 340px;
 color: #534dd1;
 }
 /* errors */
@@ -152,7 +153,7 @@ color: #534dd1;
 .view-content-public {
 padding: 0.5em;
 border: 1px solid #534dd1;
-width: 400px;
+width: 450px;
 color: #534dd1;
 font-size: 16px;
 }

@@ -14,7 +14,7 @@
 		<div id="page">
 			<?php if ($current_page) { ?>
 					<h2><?php echo  htmlentities($current_page["manu_name"]); ?>&nbsp;
-					<span style="margin-left: 200px; color: #000; font-size: 12px;"><?php echo date("Y/m/d"); ?></span> <br><br>
+					<span style="color: #534dd1;float: right; font-size: 12px;"><?php echo date("Y/m/d"); ?></span> <br><br>
 				<div class="view-content-public">
 					<?php echo  nl2br(htmlentities($current_page["content"])); ?>
 				</div>

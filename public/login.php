@@ -1,7 +1,8 @@
  	<?php require_once("../includes/session.php"); ?> 
-	<?php require_once("../includes/db_connection.php"); ?>
 	<?php require_once("../includes/functions.php"); ?> 
+	<?php require_once("../includes/db_connection.php"); ?>
 	<?php require_once("../includes/validation_functions.php"); ?>
+
 
 	<?php 
 	$username = "";
@@ -23,6 +24,8 @@
  		if ($found_admin) {
  			//Success
  			//mark user as logged in
+ 			$_SESSION["admin_id"] = $found_admin["id"];
+ 			$_SESSION["username"] = $found_admin["username"];
  			redirect_to("admin.php");
  		} else {
  			//Failure

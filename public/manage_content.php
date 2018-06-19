@@ -3,6 +3,7 @@
 	<?php require_once("../includes/functions.php"); ?> 
 	 <?php $layout_context = "admin" ?>
 	<?php include("../includes/layouts/header.php"); ?>
+	<?php confirm_logged_in(); ?>
 	 
  
 	<?php find_selected_page(); ?> 
